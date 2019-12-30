@@ -78,7 +78,7 @@ namespace server::protocol
 		}
 
 		receiver_thread = thread(&protocol::receiver_thread_function, this);
-		sender_thread = thread(&protocol::receiver_thread_function, this);
+		sender_thread = thread(&protocol::sender_thread_function, this);
 
 		initialized = true;
 
