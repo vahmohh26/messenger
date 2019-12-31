@@ -11,6 +11,7 @@ namespace server::core
 	login_response::login_response()
 	{
 		_type = type::login;
+		_result = result::failure;
 	}
 
 	login_response::login_response(const result& result) : login_response()
@@ -32,12 +33,12 @@ namespace server::core
 	{
 	}
 
-	void login_response::set_result(const result& result)
+	void login_response::set_result(result result)
 	{
 		_result = result;
 	}
 
-	const login_response::result& login_response::get_result() const
+	login_response::result login_response::get_result()
 	{
 		return _result;
 	}

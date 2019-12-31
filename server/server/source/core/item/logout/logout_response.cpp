@@ -11,6 +11,7 @@ namespace server::core
 	logout_response::logout_response()
 	{
 		_type = type::logout;
+		_result = result::failure;
 	}
 
 	logout_response::logout_response(const result& result) : logout_response()
@@ -32,12 +33,12 @@ namespace server::core
 	{
 	}
 
-	void logout_response::set_result(const result& result)
+	void logout_response::set_result(result result)
 	{
 		_result = result;
 	}
 
-	const logout_response::result& logout_response::get_result() const
+	logout_response::result logout_response::get_result()
 	{
 		return _result;
 	}

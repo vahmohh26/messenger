@@ -11,4 +11,5 @@ namespace server::core
 
 	queue<package> login(session& session, const package& request_package);
 	queue<package> logout(session& session, const package& request_package);
+	queue<package> message(session& session, const package& request_package);
 }

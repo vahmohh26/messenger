@@ -1,9 +1,5 @@
 #pragma once
 
-#include <array>
-
-#include <configuration/configuration.h>
-
 #include "protocol/protocol.h"
 #include "session/session.h"
 
@@ -27,7 +23,7 @@ namespace server::core
 
 		bool initialized;
 		bool terminated;
-		array<thread, configuration::servers_number> server_threads;
+		thread server_thread;
 		thread requester_thread;
 		thread responder_thread;
 		atomic_bool server_thread_stop;

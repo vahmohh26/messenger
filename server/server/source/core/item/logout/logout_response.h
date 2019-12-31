@@ -20,13 +20,13 @@ namespace server::core
 		logout_response(const vector<char>& bytes);
 		~logout_response();
 
-		void set_result(const result& result);
+		void set_result(result result);
 
-		const result& get_result() const;
+		result get_result();
 
 		vector<char> to_bytes();
 
-	protected:
+	private:
 		result _result;
 	};
 }

@@ -42,11 +42,7 @@ namespace server::core
 			return false;
 		}
 
-		for (auto& server_thread : server_threads)
-		{
-			server_thread = thread(&core::server_thread_function, this);
-		}
-
+		server_thread = thread(&core::server_thread_function, this);
 		requester_thread = thread(&core::requester_thread_function, this);
 		responder_thread = thread(&core::responder_thread_function, this);
 
@@ -68,12 +64,9 @@ namespace server::core
 		requester_thread_stop = true;
 		responder_thread_stop = true;
 
-		for (auto& server_thread : server_threads)
+		if (server_thread.joinable())
 		{
-			if (server_thread.joinable())
-			{
-				server_thread.join();
-			}
+			server_thread.join();
 		}
 
 		if (requester_thread.joinable())
@@ -119,8 +112,12 @@ namespace server::core
 				{
 				case item::type::login:
 					responded_package = login(session, requested_package.value());
+					break;
 				case item::type::logout:
 					responded_package = logout(session, requested_package.value());
+					break;
+				case item::type::message:
+					responded_package = message(session, requested_package.value());
 					break;
 				default:
 					break;

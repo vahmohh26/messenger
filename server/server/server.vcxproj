@@ -164,6 +164,8 @@
     <ClCompile Include="source\core\item\login\login_response.cpp" />
     <ClCompile Include="source\core\item\logout\logout_request.cpp" />
     <ClCompile Include="source\core\item\logout\logout_response.cpp" />
+    <ClCompile Include="source\core\item\message\message_request.cpp" />
+    <ClCompile Include="source\core\item\message\message_response.cpp" />
     <ClCompile Include="source\core\package\package.cpp" />
     <ClCompile Include="source\core\protocol\protocol.cpp" />
     <ClCompile Include="source\core\service\service.cpp" />
@@ -180,6 +182,8 @@
     <ClInclude Include="source\core\item\login\login_response.h" />
     <ClInclude Include="source\core\item\logout\logout_request.h" />
     <ClInclude Include="source\core\item\logout\logout_response.h" />
+    <ClInclude Include="source\core\item\message\message_request.h" />
+    <ClInclude Include="source\core\item\message\message_response.h" />
     <ClInclude Include="source\core\package\package.h" />
     <ClInclude Include="source\core\protocol\protocol.h" />
     <ClInclude Include="source\core\service\service.h" />

@@ -22,7 +22,7 @@ namespace server::core
 
 		vector<char> to_bytes();
 
-	protected:
+	private:
 		string _username;
 	};
 }

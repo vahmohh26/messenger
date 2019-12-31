@@ -13,7 +13,8 @@ namespace server::core
 		{
 			unknown,
 			login,
-			logout
+			logout,
+			message
 		};
 
 		item();
