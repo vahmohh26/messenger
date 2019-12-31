@@ -7,7 +7,7 @@
 
 namespace server::core
 {
-	queue<package> login(const package& requested_package)
+	queue<package> login(session& session, const package& requested_package)
 	{
 		queue<package> responded_packages;
 
@@ -23,7 +23,7 @@ namespace server::core
 		return move(responded_packages);
 	}
 
-	queue<package> logout(const package& requested_package)
+	queue<package> logout(session& session, const package& requested_package)
 	{
 		queue<package> responded_packages;
 

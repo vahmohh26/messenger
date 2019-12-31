@@ -118,9 +118,9 @@ namespace server::core
 				switch (item(requested_package.value().get_buffer()).get_type())
 				{
 				case item::type::login:
-					responded_package = login(requested_package.value());
+					responded_package = login(session, requested_package.value());
 				case item::type::logout:
-					responded_package = logout(requested_package.value());
+					responded_package = logout(session, requested_package.value());
 					break;
 				default:
 					break;

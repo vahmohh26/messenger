@@ -5,6 +5,7 @@
 #include <configuration/configuration.h>
 
 #include "protocol/protocol.h"
+#include "session/session.h"
 
 namespace server::core
 {
@@ -33,6 +34,7 @@ namespace server::core
 		atomic_bool requester_thread_stop;
 		atomic_bool responder_thread_stop;
 		protocol protocol;
+		session session;
 		queue<package> requested_packages;
 		queue<package> responded_packages;
 	};

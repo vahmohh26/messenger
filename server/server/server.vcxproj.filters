@@ -43,6 +43,9 @@
     <Filter Include="Source Files\core\package">
       <UniqueIdentifier>{80b7463b-bb26-4b26-87e7-fb6eb618d0ae}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\core\session">
+      <UniqueIdentifier>{7cb77248-202b-4cb2-896d-620c36074f2f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\main.cpp">
@@ -81,6 +84,9 @@
     <ClCompile Include="source\core\package\package.cpp">
       <Filter>Source Files\core\package</Filter>
     </ClCompile>
+    <ClCompile Include="source\core\session\session.cpp">
+      <Filter>Source Files\core\session</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\configuration\configuration.h">
@@ -118,6 +124,9 @@
     </ClInclude>
     <ClInclude Include="source\core\package\package.h">
       <Filter>Source Files\core\package</Filter>
+    </ClInclude>
+    <ClInclude Include="source\core\session\session.h">
+      <Filter>Source Files\core\session</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
