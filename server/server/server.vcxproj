@@ -158,6 +158,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="source\core\core.cpp" />
+    <ClCompile Include="source\core\item\item.cpp" />
+    <ClCompile Include="source\core\item\login\login_request.cpp" />
+    <ClCompile Include="source\core\item\login\login_response.cpp" />
+    <ClCompile Include="source\core\item\logout\logout_request.cpp" />
+    <ClCompile Include="source\core\item\logout\logout_response.cpp" />
+    <ClCompile Include="source\core\service\service.cpp" />
     <ClCompile Include="source\log\log.cpp" />
     <ClCompile Include="source\main.cpp" />
     <ClCompile Include="source\protocol\package\package.cpp" />
@@ -165,11 +172,30 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\configuration\configuration.h" />
+    <ClInclude Include="source\core\core.h" />
+    <ClInclude Include="source\core\item\item.h" />
+    <ClInclude Include="source\core\item\login\login_request.h" />
+    <ClInclude Include="source\core\item\login\login_response.h" />
+    <ClInclude Include="source\core\item\logout\logout_request.h" />
+    <ClInclude Include="source\core\item\logout\logout_response.h" />
+    <ClInclude Include="source\core\service\service.h" />
     <ClInclude Include="source\log\log.h" />
     <ClInclude Include="source\protocol\package\package.h" />
     <ClInclude Include="source\protocol\protocol.h" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
+    <Import Project="..\packages\boost.1.71.0.0\build\boost.targets" Condition="Exists('..\packages\boost.1.71.0.0\build\boost.targets')" />
+    <Import Project="..\packages\boost_serialization-vc142.1.71.0.0\build\boost_serialization-vc142.targets" Condition="Exists('..\packages\boost_serialization-vc142.1.71.0.0\build\boost_serialization-vc142.targets')" />
   </ImportGroup>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\boost.1.71.0.0\build\boost.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\boost.1.71.0.0\build\boost.targets'))" />
+    <Error Condition="!Exists('..\packages\boost_serialization-vc142.1.71.0.0\build\boost_serialization-vc142.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\boost_serialization-vc142.1.71.0.0\build\boost_serialization-vc142.targets'))" />
+  </Target>
 </Project>
