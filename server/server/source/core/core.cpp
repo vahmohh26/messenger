@@ -98,8 +98,8 @@ namespace server::core
 
 	void core::server_thread_function()
 	{
-		optional<protocol::package> requested_package;
-		queue<protocol::package> responded_package;
+		optional<package> requested_package;
+		queue<package> responded_package;
 
 		while (!server_thread_stop)
 		{
@@ -142,7 +142,7 @@ namespace server::core
 
 	void core::requester_thread_function()
 	{
-		queue<protocol::package> packages;
+		queue<package> packages;
 
 		while (!requester_thread_stop)
 		{
@@ -162,7 +162,7 @@ namespace server::core
 
 	void core::responder_thread_function()
 	{
-		optional<protocol::package> package;
+		optional<package> package;
 
 		while (!responder_thread_stop)
 		{

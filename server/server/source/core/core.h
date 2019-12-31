@@ -3,7 +3,8 @@
 #include <array>
 
 #include <configuration/configuration.h>
-#include <protocol/protocol.h>
+
+#include "protocol/protocol.h"
 
 namespace server::core
 {
@@ -25,14 +26,14 @@ namespace server::core
 
 		bool initialized;
 		bool terminated;
-		array<thread, configuration::core::servers_number> server_threads;
+		array<thread, configuration::servers_number> server_threads;
 		thread requester_thread;
 		thread responder_thread;
 		atomic_bool server_thread_stop;
 		atomic_bool requester_thread_stop;
 		atomic_bool responder_thread_stop;
-		protocol::protocol protocol;
-		queue<protocol::package> requested_packages;
-		queue<protocol::package> responded_packages;
+		protocol protocol;
+		queue<package> requested_packages;
+		queue<package> responded_packages;
 	};
 }

@@ -3,7 +3,7 @@
 #include <string>
 #include <vector>
 
-namespace server::protocol
+namespace server::core
 {
 	using namespace std;
 

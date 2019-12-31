@@ -1,6 +1,6 @@
 #include "package.h"
 
-namespace server::protocol
+namespace server::core
 {
 	package::package()
 	{

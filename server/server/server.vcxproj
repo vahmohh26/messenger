@@ -164,11 +164,11 @@
     <ClCompile Include="source\core\item\login\login_response.cpp" />
     <ClCompile Include="source\core\item\logout\logout_request.cpp" />
     <ClCompile Include="source\core\item\logout\logout_response.cpp" />
+    <ClCompile Include="source\core\package\package.cpp" />
+    <ClCompile Include="source\core\protocol\protocol.cpp" />
     <ClCompile Include="source\core\service\service.cpp" />
     <ClCompile Include="source\log\log.cpp" />
     <ClCompile Include="source\main.cpp" />
-    <ClCompile Include="source\protocol\package\package.cpp" />
-    <ClCompile Include="source\protocol\protocol.cpp" />
     <ClCompile Include="source\server\server.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -179,10 +179,10 @@
     <ClInclude Include="source\core\item\login\login_response.h" />
     <ClInclude Include="source\core\item\logout\logout_request.h" />
     <ClInclude Include="source\core\item\logout\logout_response.h" />
+    <ClInclude Include="source\core\package\package.h" />
+    <ClInclude Include="source\core\protocol\protocol.h" />
     <ClInclude Include="source\core\service\service.h" />
     <ClInclude Include="source\log\log.h" />
-    <ClInclude Include="source\protocol\package\package.h" />
-    <ClInclude Include="source\protocol\protocol.h" />
     <ClInclude Include="source\server\server.h" />
   </ItemGroup>
   <ItemGroup>

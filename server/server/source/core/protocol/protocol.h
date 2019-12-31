@@ -7,9 +7,9 @@
 
 #include <WinSock2.h>
 
-#include "package/package.h"
+#include "../package/package.h"
 
-namespace server::protocol
+namespace server::core
 {
 	using namespace std;
 

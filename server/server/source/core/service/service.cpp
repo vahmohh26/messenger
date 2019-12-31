@@ -7,9 +7,9 @@
 
 namespace server::core
 {
-	queue<protocol::package> login(const protocol::package& requested_package)
+	queue<package> login(const package& requested_package)
 	{
-		queue<protocol::package> responded_packages;
+		queue<package> responded_packages;
 
 		if (login_request(requested_package.get_buffer()).get_username() == "vahid")
 		{
@@ -23,9 +23,9 @@ namespace server::core
 		return move(responded_packages);
 	}
 
-	queue<protocol::package> logout(const protocol::package& requested_package)
+	queue<package> logout(const package& requested_package)
 	{
-		queue<protocol::package> responded_packages;
+		queue<package> responded_packages;
 
 		if (login_request(requested_package.get_buffer()).get_username() == "vahid")
 		{

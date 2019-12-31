@@ -8,7 +8,7 @@
 #include <configuration/configuration.h>
 #include <log/log.h>
 
-namespace server::protocol
+namespace server::core
 {
 	mutex client_sockets_mutex;
 	mutex received_packages_mutex;
@@ -63,7 +63,7 @@ namespace server::protocol
 		SOCKADDR_IN addr;
 		addr.sin_family = AF_INET;
 		addr.sin_addr.s_addr = INADDR_ANY;
-		addr.sin_port = htons(configuration::protocol::port);
+		addr.sin_port = htons(configuration::port);
 
 		if (::bind(server_socket, (SOCKADDR*)&addr, sizeof(addr)) == SOCKET_ERROR)
 		{
@@ -171,7 +171,7 @@ namespace server::protocol
 		int addr_size = sizeof(addr);
 
 		int receive;
-		char buffer[configuration::protocol::buffer_size];
+		char buffer[configuration::buffer_size];
 
 		while (!receiver_thread_stop)
 		{
@@ -187,7 +187,7 @@ namespace server::protocol
 
 			for (auto const& [ip, socket] : client_sockets)
 			{
-				receive = ::recv(socket, buffer, static_cast<int>(configuration::protocol::buffer_size), 0);
+				receive = ::recv(socket, buffer, static_cast<int>(configuration::buffer_size), 0);
 				if (receive > 0)
 				{
 					received_packages_mutex.lock();

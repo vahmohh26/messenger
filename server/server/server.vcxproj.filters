@@ -13,12 +13,6 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Source Files\protocol">
-      <UniqueIdentifier>{c048fcce-b98f-4154-8111-3e99bf0a73fb}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\protocol\package">
-      <UniqueIdentifier>{2b2b20c3-594d-49dd-91c9-5e56b75533a0}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\configuration">
       <UniqueIdentifier>{bee008d7-8b62-4ec5-a3e0-8fe803cc7226}</UniqueIdentifier>
     </Filter>
@@ -43,16 +37,16 @@
     <Filter Include="Source Files\server">
       <UniqueIdentifier>{68dad26d-8024-4c54-993c-fd1666ea6c55}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\core\protocol">
+      <UniqueIdentifier>{02239489-75e2-4c23-8714-c4c2868d8a4f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\core\package">
+      <UniqueIdentifier>{80b7463b-bb26-4b26-87e7-fb6eb618d0ae}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\main.cpp">
       <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="source\protocol\protocol.cpp">
-      <Filter>Source Files\protocol</Filter>
-    </ClCompile>
-    <ClCompile Include="source\protocol\package\package.cpp">
-      <Filter>Source Files\protocol\package</Filter>
     </ClCompile>
     <ClCompile Include="source\log\log.cpp">
       <Filter>Source Files\log</Filter>
@@ -81,14 +75,14 @@
     <ClCompile Include="source\server\server.cpp">
       <Filter>Source Files\server</Filter>
     </ClCompile>
+    <ClCompile Include="source\core\protocol\protocol.cpp">
+      <Filter>Source Files\core\protocol</Filter>
+    </ClCompile>
+    <ClCompile Include="source\core\package\package.cpp">
+      <Filter>Source Files\core\package</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="source\protocol\protocol.h">
-      <Filter>Source Files\protocol</Filter>
-    </ClInclude>
-    <ClInclude Include="source\protocol\package\package.h">
-      <Filter>Source Files\protocol\package</Filter>
-    </ClInclude>
     <ClInclude Include="source\configuration\configuration.h">
       <Filter>Source Files\configuration</Filter>
     </ClInclude>
@@ -118,6 +112,12 @@
     </ClInclude>
     <ClInclude Include="source\server\server.h">
       <Filter>Source Files\server</Filter>
+    </ClInclude>
+    <ClInclude Include="source\core\protocol\protocol.h">
+      <Filter>Source Files\core\protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="source\core\package\package.h">
+      <Filter>Source Files\core\package</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

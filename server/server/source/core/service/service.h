@@ -2,12 +2,12 @@
 
 #include <queue>
 
-#include <protocol/package/package.h>
+#include "../package/package.h"
 
 namespace server::core
 {
 	using namespace std;
 
-	queue<protocol::package> login(const protocol::package& request_package);
-	queue<protocol::package> logout(const protocol::package& request_package);
+	queue<package> login(const package& request_package);
+	queue<package> logout(const package& request_package);
 }
