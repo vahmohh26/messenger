@@ -9,6 +9,10 @@ namespace server::log
 		cout << "file: " << file << endl;
 		cout << "function: " << function << endl;
 		cout << "line: " << line << endl;
-		cout << "message: " << message << endl;
+
+		if (!message.empty())
+		{
+			cout << "message: " << message << endl;
+		}
 	}
 }

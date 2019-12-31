@@ -40,6 +40,9 @@
     <Filter Include="Source Files\core\item\logout">
       <UniqueIdentifier>{c6d441a1-d783-45c0-a139-633ac0e41e0d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\server">
+      <UniqueIdentifier>{68dad26d-8024-4c54-993c-fd1666ea6c55}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\main.cpp">
@@ -75,6 +78,9 @@
     <ClCompile Include="source\core\item\logout\logout_response.cpp">
       <Filter>Source Files\core\item\logout</Filter>
     </ClCompile>
+    <ClCompile Include="source\server\server.cpp">
+      <Filter>Source Files\server</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\protocol\protocol.h">
@@ -109,6 +115,9 @@
     </ClInclude>
     <ClInclude Include="source\core\item\logout\logout_response.h">
       <Filter>Source Files\core\item\logout</Filter>
+    </ClInclude>
+    <ClInclude Include="source\server\server.h">
+      <Filter>Source Files\server</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

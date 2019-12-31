@@ -1,12 +1,6 @@
-#include "core/core.h"
+#include "server/server.h"
 
 int main(int argc, char* argv[])
 {
-	server::core::core core;
-
-	core.initialize();
-
-	while (true);
-
-	return 0;
+	return server::execute(argc, argv);
 }

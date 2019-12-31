@@ -169,6 +169,7 @@
     <ClCompile Include="source\main.cpp" />
     <ClCompile Include="source\protocol\package\package.cpp" />
     <ClCompile Include="source\protocol\protocol.cpp" />
+    <ClCompile Include="source\server\server.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\configuration\configuration.h" />
@@ -182,6 +183,7 @@
     <ClInclude Include="source\log\log.h" />
     <ClInclude Include="source\protocol\package\package.h" />
     <ClInclude Include="source\protocol\protocol.h" />
+    <ClInclude Include="source\server\server.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
