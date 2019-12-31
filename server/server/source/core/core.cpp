@@ -3,6 +3,8 @@
 #include <mutex>
 #include <optional>
 
+#include <log/log.h>
+
 #include "service/service.h"
 #include "item/item.h"
 
@@ -28,11 +30,15 @@ namespace server::core
 	{
 		if (initialized)
 		{
+			LOG();
+
 			return false;
 		}
 
 		if (!protocol.initialize())
 		{
+			LOG();
+
 			return false;
 		}
 
@@ -53,6 +59,8 @@ namespace server::core
 	{
 		if (!initialized || terminated)
 		{
+			LOG();
+
 			return false;
 		}
 
@@ -80,6 +88,7 @@ namespace server::core
 
 		if (!protocol.terminate())
 		{
+			LOG();
 		}
 
 		terminated = true;

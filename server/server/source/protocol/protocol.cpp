@@ -31,13 +31,15 @@ namespace server::protocol
 	{
 		if (initialized)
 		{
+			LOG();
+
 			return false;
 		}
 
 		WSADATA wsadata;
 		if (::WSAStartup(MAKEWORD(2, 2), &wsadata) != NO_ERROR)
 		{
-			LOG(to_string(::WSAGetLastError()));
+			LOG_MESSAGE(to_string(::WSAGetLastError()));
 
 			return false;
 		}
@@ -45,7 +47,7 @@ namespace server::protocol
 		server_socket = ::socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
 		if (server_socket == INVALID_SOCKET)
 		{
-			LOG(to_string(::WSAGetLastError()));
+			LOG_MESSAGE(to_string(::WSAGetLastError()));
 
 			return false;
 		}
@@ -53,7 +55,7 @@ namespace server::protocol
 		u_long mode = 1;
 		if (::ioctlsocket(server_socket, FIONBIO, &mode) == SOCKET_ERROR)
 		{
-			LOG(to_string(::WSAGetLastError()));
+			LOG_MESSAGE(to_string(::WSAGetLastError()));
 
 			return false;
 		}
@@ -65,14 +67,14 @@ namespace server::protocol
 
 		if (::bind(server_socket, (SOCKADDR*)&addr, sizeof(addr)) == SOCKET_ERROR)
 		{
-			LOG(to_string(::WSAGetLastError()));
+			LOG_MESSAGE(to_string(::WSAGetLastError()));
 
 			return false;
 		}
 
 		if (::listen(server_socket, SOMAXCONN) == SOCKET_ERROR)
 		{
-			LOG(to_string(::WSAGetLastError()));
+			LOG_MESSAGE(to_string(::WSAGetLastError()));
 
 			return false;
 		}
@@ -89,6 +91,8 @@ namespace server::protocol
 	{
 		if (!initialized || terminated)
 		{
+			LOG();
+
 			return false;
 		}
 
@@ -109,18 +113,18 @@ namespace server::protocol
 		{
 			if (::closesocket(socket) == SOCKET_ERROR)
 			{
-				LOG(to_string(::WSAGetLastError()));
+				LOG_MESSAGE(to_string(::WSAGetLastError()));
 			}
 		}
 
 		if (::closesocket(server_socket) == SOCKET_ERROR)
 		{
-			LOG(to_string(::WSAGetLastError()));
+			LOG_MESSAGE(to_string(::WSAGetLastError()));
 		}
 
 		if (::WSACleanup() != NO_ERROR)
 		{
-			LOG(to_string(::WSAGetLastError()));
+			LOG_MESSAGE(to_string(::WSAGetLastError()));
 		}
 
 		terminated = true;
@@ -132,6 +136,8 @@ namespace server::protocol
 	{
 		if (!initialized || terminated)
 		{
+			LOG();
+
 			return false;
 		}
 
@@ -146,6 +152,8 @@ namespace server::protocol
 	{
 		if (!initialized || terminated)
 		{
+			LOG();
+
 			return false;
 		}
 
@@ -216,7 +224,7 @@ namespace server::protocol
 				{
 					if (::send(socket, package.value().get_buffer().data(), static_cast<int>(package.value().get_buffer().size()), 0) == SOCKET_ERROR)
 					{
-						LOG(to_string(::WSAGetLastError()));
+						LOG_MESSAGE(to_string(::WSAGetLastError()));
 					}
 				}
 
